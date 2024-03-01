@@ -17,19 +17,17 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
         imageView = findViewById(R.id.imageView);
         Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            //noinspection deprecation
             startActivityForResult(intent, 0);
         });
 
